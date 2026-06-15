@@ -40,10 +40,7 @@ export default function Navbar() {
       label: "Tentang Kami",
       href: "#about",
     },
-    {
-      label: "Galeri",
-      href: "#gallery",
-    },
+
     {
       label: "Kontak",
       href: "#contact",
