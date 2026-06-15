@@ -1,6 +1,5 @@
 import Navbar from "./features/home/components/Navbar";
 import { Hero } from "./features/home/components/Hero";
-import { ServicesSection } from "./features/services/components/ServicesSection";
 import { AboutSection } from "./features/about/components/AboutSection";
 import { ContactSection } from "./features/contact/components/ContactSection";
 import { Footer } from "./features/home/components/Footer";
