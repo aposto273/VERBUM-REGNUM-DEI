@@ -9,7 +9,7 @@ import {
 
 const careers = [
   { title: "Pendeta & Pelayan Gereja", icon: Church },
-  { title: "Pembina Pemuridan", icon: Users },
+  { title: "Pemuridan", icon: Users },
   { title: "Penginjil & Misionaris", icon: Globe },
   { title: "Guru Pendidikan Agama Kristen", icon: BookOpen },
   { title: "Penulis & Peneliti Kristen", icon: PenSquare },

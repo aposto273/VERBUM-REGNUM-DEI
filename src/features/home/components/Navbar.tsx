@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,22 +13,18 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const menus = [
     {
       label: "Beranda",
-      href: "#",
+      href: "#hero",
     },
-
     {
       label: "Visi & Misi",
       href: "#visimisi",
     },
-
     {
       label: "Program Studi",
       href: "#programstudi",
@@ -36,7 +33,16 @@ export default function Navbar() {
       label: "Tentang Kami",
       href: "#about",
     },
+    {
+      label: "Pengurus",
 
+      dropdown: [
+        {
+          label: "Dosen & Staff",
+          href: "#dosen",
+        },
+      ],
+    },
     {
       label: "Kontak",
       href: "#contact",
@@ -47,56 +53,41 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#081F4D]/85 backdrop-blur-2xl shadow-2xl "
+          ? "bg-[#081F4D]/85 backdrop-blur-2xl shadow-xl"
           : "bg-transparent"
       }`}
     >
-      {/* Gold Line */}
-      {/* <div
-        className={`absolute bottom-0 left-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400/60 to-transparent transition-all duration-500 ${
-          scrolled ? "w-full opacity-100" : "w-0 opacity-0"
-        }`}
-      /> */}
-
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-4 md:gap-5 group">
+          <a href="#hero" className="flex items-center gap-4 group">
             <div className="relative">
-              {/* Glow */}
               <div className="absolute inset-0 rounded-full bg-amber-400/30 blur-xl scale-125 group-hover:scale-150 transition-all duration-500" />
 
-              {/* Circle */}
               <div
                 className="
-                        
-              relative
-              flex items-center justify-center
-              w-16 h-16
-              md:w-20 md:h-20
-              lg:w-20 lg:h-20
-              rounded-full
-              bg-white
-              shadow-2xl
-              ring-4 ring-amber-300/30
-              transition-all duration-500
-              group-hover:scale-110
-            "
+                  relative
+                  flex items-center justify-center
+                  w-16 h-16
+                  md:w-20 md:h-20
+                  rounded-full
+                  bg-white
+                  shadow-xl
+                  ring-4 ring-amber-300/30
+                  transition-all duration-500
+                  group-hover:scale-105
+                "
               >
                 <img
                   src="/logo.svg"
-                  alt="STT Verbum Regnum Dei"
-                  className="w-11 h-11 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full"
+                  alt="Verbum Regnum Dei"
+                  className="w-11 h-11 md:w-14 md:h-14 rounded-full"
                 />
               </div>
             </div>
 
             <div className="hidden sm:block">
-              <h1
-                className={`font-bold leading-tight transition-colors ${
-                  scrolled ? "text-white" : "text-white"
-                }`}
-              >
+              <h1 className="font-bold leading-tight text-white">
                 <span className="text-sm md:text-base">
                   SEKOLAH TINGGI TEOLOGI
                 </span>
@@ -113,37 +104,83 @@ export default function Navbar() {
               </p>
             </div>
           </a>
+
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8">
             {menus.map((menu) => (
-              <a
-                key={menu.href}
-                href={menu.href}
-                className="
-                  relative
-                  text-sm
-                  font-medium
-                  text-white
-                  hover:text-amber-300
-                  transition-all
-                  duration-300
-                  after:absolute
-                  after:left-0
-                  after:-bottom-2
-                  after:h-[2px]
-                  after:w-0
-                  after:bg-amber-400
-                  after:transition-all
-                  after:duration-300
-                  hover:after:w-full
-                "
-              >
-                {menu.label}
-              </a>
+              <div key={menu.label} className="relative group">
+                <a
+                  href={menu.href}
+                  className="
+                    flex items-center gap-1
+                    text-sm font-medium
+                    text-white
+                    hover:text-amber-300
+                    transition-colors
+                  "
+                >
+                  {menu.label}
+
+                  {menu.dropdown && (
+                    <ChevronDown
+                      size={16}
+                      className="
+                        transition-transform duration-300
+                        group-hover:rotate-180
+                      "
+                    />
+                  )}
+                </a>
+
+                {menu.dropdown && (
+                  <div
+                    className="
+                      absolute
+                      top-full
+                      left-0
+                      mt-4
+                      min-w-[220px]
+                      rounded-2xl
+                      border
+                      border-white/10
+                      bg-[#081F4D]/95
+                      backdrop-blur-xl
+                      shadow-2xl
+                      opacity-0
+                      invisible
+                      translate-y-2
+                      group-hover:opacity-100
+                      group-hover:visible
+                      group-hover:translate-y-0
+                      transition-all
+                      duration-300
+                      overflow-hidden
+                    "
+                  >
+                    {menu.dropdown.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        className="
+                          block
+                          px-5 py-3
+                          text-sm
+                          text-white
+                          hover:bg-amber-500/10
+                          hover:text-amber-300
+                          transition-colors
+                        "
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
-          {/* Mobile Button */}
+          {/* Mobile Toggle */}
           <button
             className="md:hidden text-white"
             onClick={() => setOpen(!open)}
@@ -159,28 +196,95 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all  ${
-          open ? "max-h-[500px]" : "max-h-0"
+        className={`md:hidden overflow-hidden transition-all duration-500 ${
+          open ? "max-h-[600px]" : "max-h-0"
         }`}
       >
-        <div className=" backdrop-blur-2xl border-amber-400/20 px-6 py-6">
-          {" "}
-          <div className="flex flex-col gap-4">
-            {menus.map((menu) => (
-              <a
-                key={menu.href}
-                href={menu.href}
-                onClick={() => setOpen(false)}
-                className="
-                  block
-                  py-3
-                  text-amber-300
-                  hover:text-amber-300
-                  transition-colors
-                  "
-              >
-                {menu.label}
-              </a>
+        <div
+          className="
+            bg-[#081F4D]/95
+            backdrop-blur-2xl
+            border-t
+            border-white/10
+            px-6 py-6
+          "
+        >
+          <div className="flex flex-col gap-1">
+            {menus.map((menu, index) => (
+              <div key={menu.label}>
+                {menu.dropdown ? (
+                  <>
+                    <button
+                      onClick={() =>
+                        setOpenDropdown(openDropdown === index ? null : index)
+                      }
+                      className="
+                        w-full
+                        flex
+                        items-center
+                        justify-between
+                        py-3
+                        text-amber-300
+                        font-medium
+                      "
+                    >
+                      {menu.label}
+
+                      <ChevronRight
+                        size={18}
+                        className={`transition-transform duration-300 ${
+                          openDropdown === index ? "rotate-90" : ""
+                        }`}
+                      />
+                    </button>
+
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        openDropdown === index
+                          ? "max-h-40 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      {menu.dropdown.map((item) => (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => {
+                            setOpen(false);
+                            setOpenDropdown(null);
+                          }}
+                          className="
+                            block
+                            py-2
+                            pl-6
+                            text-sm
+                            text-slate-300
+                            hover:text-amber-300
+                            transition-colors
+                          "
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <a
+                    href={menu.href}
+                    onClick={() => setOpen(false)}
+                    className="
+                      block
+                      py-3
+                      text-amber-300
+                      font-medium
+                      hover:text-yellow-200
+                      transition-colors
+                    "
+                  >
+                    {menu.label}
+                  </a>
+                )}
+              </div>
             ))}
           </div>
         </div>

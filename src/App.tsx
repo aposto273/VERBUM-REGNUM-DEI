@@ -5,6 +5,7 @@ import { ContactSection } from "./features/contact/components/ContactSection";
 import { Footer } from "./features/home/components/Footer";
 import { VisiMisi } from "./features/visimisi/components/visimisi";
 import { ProgramStudiSection } from "./features/programstudi/components/programstudi";
+import { Dosen } from "./features/dosen/components/dosen";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <VisiMisi />
+      <Dosen />
       <ProgramStudiSection />
       <AboutSection />
       <ContactSection />
