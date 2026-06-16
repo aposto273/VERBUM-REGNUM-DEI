@@ -4,8 +4,7 @@ import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
-
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);

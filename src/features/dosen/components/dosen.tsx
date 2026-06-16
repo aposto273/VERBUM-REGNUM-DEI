@@ -9,7 +9,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 
 const lecturers = [
   {
@@ -79,7 +79,7 @@ export const Dosen = () => {
           </span>
 
           <h2 className="mt-6 text-4xl md:text-5xl font-bold text-[#0B1F3A]">
-            Dosen Tetap yang Dipersiapkan
+            <span className="block text-[#C9A227]">VERBUM REGNUM DEI</span>
           </h2>
 
           <div className="w-24 h-1 bg-[#C9A227] mx-auto mt-6 rounded-full" />
