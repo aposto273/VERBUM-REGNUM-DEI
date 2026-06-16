@@ -17,10 +17,6 @@ export default function Navbar() {
     };
   }, []);
 
-  const navText = scrolled ? "text-slate-900" : "text-white";
-
-  const navHover = scrolled ? "hover:text-blue-600" : "hover:text-blue-200";
-
   const menus = [
     {
       label: "Beranda",
