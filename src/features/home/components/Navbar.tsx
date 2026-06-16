@@ -159,11 +159,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
+        className={`md:hidden overflow-hidden transition-all  ${
           open ? "max-h-[500px]" : "max-h-0"
         }`}
       >
-        <div className="bg-[#081F4D]/95 backdrop-blur-2xl border-t border-amber-400/20 px-6 py-6">
+        <div className=" backdrop-blur-2xl border-amber-400/20 px-6 py-6">
           {" "}
           <div className="flex flex-col gap-4">
             {menus.map((menu) => (

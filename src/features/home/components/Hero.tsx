@@ -15,7 +15,7 @@ export const Hero = () => {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-amber-400/15 rounded-full blur-3xl" />
 
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-400/15 rounded-full blur-3xl" />
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-8 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* LEFT CONTENT */}
           <div>
@@ -36,8 +36,8 @@ export const Hero = () => {
             <div className="relative mt-8 lg:hidden  animate-[fadeUp_0.8s_ease-out]">
               <div className="absolute -inset-4 rounded-[32px] bg-amber-400/20 blur-2xl" />
 
-              <div className="absolute top-4 left-4 z-20 rounded-[0.5rem] bg-white/95 px-4 py-2 shadow-xl">
-                <span className="text-xs font-semibold text-amber-600 ">
+              <div className="absolute top-4 left-4 z-20 opacity-80 rounded-[0.5rem] bg-white/95 px-4 py-2 shadow-xl">
+                <span className="text-xs font-semibold ">
                   📖 Sarjana Teologi (S.Th.)
                 </span>
               </div>
@@ -50,9 +50,9 @@ export const Hero = () => {
 
               <div className="absolute inset-0 rounded-[28px] bg-gradient-to-t from-[#081F4D]/80 via-[#081F4D]/20 to-transparent" />
 
-              <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-white font-semibold">
-                  Sekolah Tinggi Teologi Verbum Regnum Dei
+              <div className="absolute bottom-5 left-5 right-5 ">
+                <p className="text-white font-semibold text-2xl">
+                  Verbum Regnum Dei
                 </p>
 
                 <p className="text-white/80 text-sm mt-1">
@@ -62,10 +62,12 @@ export const Hero = () => {
             </div>
 
             <p className="mt-8 text-lg text-slate-200 leading-relaxed">
-              VERBUM REGNUM DEI hadir dengan kerinduan untuk mempersiapkan
-              generasi pelayan Tuhan yang memiliki pemahaman Alkitab yang kokoh,
-              karakter yang serupa Kristus, dan komitmen untuk memuridkan
-              bangsa.
+              <div className="font-semibold text-white text-2xl">
+                VERBUM REGNUM DEI
+              </div>{" "}
+              hadir dengan kerinduan untuk mempersiapkan generasi pelayan Tuhan
+              yang memiliki pemahaman Alkitab yang kokoh, karakter yang serupa
+              Kristus, dan komitmen untuk memuridkan bangsa.
             </p>
 
             <p className="mt-4 text-slate-300 leading-relaxed">
@@ -120,20 +122,19 @@ export const Hero = () => {
           </div>
 
           {/* RIGHT CONTENT */}
-          {/* RIGHT CONTENT */}
-          <div className="relative">
+          <div className="relative mt-12 hidden lg:block">
             {/* MOBILE IMAGE */}
 
             {/* DESKTOP IMAGE */}
-            <div className="relative hidden lg:block animate-[fadeUp_0.8s_ease-out]">
+            <div className="relative mt-12 hidden xl:block animate-[fadeUp_0.8s_ease-out]">
               {/* Glow */}
               <div className="absolute -inset-6 rounded-[40px] bg-amber-400/20 blur-2xl" />
 
               {/* Top Floating Card */}
-              <div className="absolute -left-8 top-10 z-20 bg-white rounded-2xl p-5 shadow-2xl border border-amber-100">
-                <p className="text-xs text-slate-500">Program Studi</p>
+              <div className="absolute -left-8 top-10 z-20 bg-white opacity-85 rounded-2xl p-5 shadow-2xl border border-amber-100">
+                <p className="text-xs text-slate-900">Program Studi</p>
 
-                <h3 className="font-bold text-amber-700">
+                <h3 className="font-semibold text-lg mt-2">
                   Sarjana Teologi (S.Th.)
                 </h3>
               </div>
@@ -149,11 +150,11 @@ export const Hero = () => {
               <div className="absolute inset-0 rounded-[32px] bg-gradient-to-t from-[#081F4D]/70 via-transparent to-transparent" />
 
               {/* Caption */}
-              <div className="absolute bottom-8 left-8">
+              <div className="absolute bottom-8 left-8 right-8">
                 <h3 className="text-white text-2xl font-bold">
-                  Kampus Pemuridan
+                  Sekolah Tinggi Teologi
+                  <br /> Verbum Regnum Dei
                 </h3>
-
                 <p className="text-white/80 mt-2">
                   Berakar pada Firman • Bertumbuh dalam Kristus • Memuridkan
                   Bangsa
