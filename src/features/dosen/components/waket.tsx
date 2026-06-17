@@ -40,6 +40,18 @@ const waket = [
     ],
   },
   {
+    name: "Billy Steven Kaitjily, M.Th.",
+    position: "Kaprodi Teologi",
+    image: "/dosen/billy.png",
+    expertise: [
+      "Teologi Biblika",
+      "Teologi Sistematika",
+      "Bahasa Ibrani dan Yunani",
+      "Teologi PL",
+      "Misiologi",
+    ],
+  },
+  {
     name: "Yordan Perutu, M.Th.",
     position: "Dosen",
     image: "/waket/yordan.png",
@@ -59,12 +71,6 @@ const waket = [
       "Eksegesis Perjanjian Baru",
       "Hermeneutika Alkitab",
     ],
-  },
-  {
-    name: "Billy Steven Kaitjily, M.Th.",
-    position: "Dosen",
-    image: "/dosen/billy.png",
-    expertise: ["Studi Biblika", "Perjanjian Baru", "Pemuridan"],
   },
 
   {
