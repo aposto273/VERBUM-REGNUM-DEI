@@ -2,6 +2,8 @@ import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Award } from "lucide-react";
 
+import img from "./../../../../public/logo.svg";
+
 import {
   Carousel,
   CarouselContent,
@@ -72,7 +74,6 @@ const waket = [
       "Hermeneutika Alkitab",
     ],
   },
-
   {
     name: "Ekker Saogo, M.Th.",
     position: "Dosen",
@@ -98,6 +99,12 @@ const waket = [
       "Yudaisme Bait Allah Kedua",
       "Eksposisi Injil dan KPR",
     ],
+  },
+  {
+    name: "Monang Siahaan M.Th.",
+    position: "Dosen Tidak Tetap",
+    image: "",
+    expertise: ["Etika", "Sejarah Gereja", "Homiletik"],
   },
   {
     name: "Ester Lorinsya Batee, S.Th.",
@@ -140,12 +147,20 @@ export const Waket = () => {
             >
               <div className="group h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
                 {/* FOTO */}
-                <div className="aspect-[3/4] overflow-hidden bg-slate-100">
-                  <img
-                    src={waket.image}
-                    alt={waket.name}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                <div className="aspect-[3/4] overflow-hidden bg-black">
+                  {waket.image ? (
+                    <img
+                      src={waket.image}
+                      alt={waket.name}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={img}
+                      alt={waket.name}
+                      className="h-full w-full object-fill"
+                    />
+                  )}
                 </div>
 
                 {/* CONTENT */}
