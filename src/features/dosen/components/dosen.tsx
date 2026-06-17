@@ -9,22 +9,31 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-import { CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 const lecturers = [
   {
     name: "Dr. Dony Effendi Kurniawan, S.Th., M.Th.",
-    position: "Ketua STT VERBUM REGNUM DEI",
+    position: "Ketua Sekolah Tinggi Teologi VERBUM REGNUM DEI",
     image: "/dosen/dony.png",
-    expertise: ["Teologi Sistematika", "Kepemimpinan Kristen", "Pemuridan"],
+    expertise: [
+      "Kepemimpinan Pendidikan Tinggi Teologi",
+      "Pengembangan Strategis Institusi",
+      "Kepemimpinan Kristen dan Pelayanan Gereja",
+    ],
   },
+];
+
+const dosen = [
   {
     name: "Billy Steven Kaitjily, M.Th.",
+    position: "Dosen",
     image: "/dosen/billy.png",
     expertise: ["Studi Biblika", "Perjanjian Baru", "Pemuridan"],
   },
   {
     name: "Noferius Waruwu, M.Pd.",
+    position: "Dosen",
     image: "/dosen/noferius.png",
     expertise: [
       "Pendidikan Kristen",
@@ -34,6 +43,7 @@ const lecturers = [
   },
   {
     name: "Ekker Saogo, M.Th.",
+    position: "Dosen",
     image: "/dosen/ekker.png",
     expertise: ["Pembinaan Jemaat", "Kepemimpinan Kristen", "Teologi Praktika"],
   },
@@ -97,9 +107,9 @@ export const Dosen = () => {
           opts={{
             loop: true,
           }}
-          className="max-w-7xl mx-auto"
+          className="w-full"
         >
-          <CarouselContent>
+          <CardContent>
             {lecturers.map((lecturer) => (
               <CarouselItem key={lecturer.name}>
                 <motion.div
@@ -132,7 +142,7 @@ export const Dosen = () => {
                           </div>
 
                           {/* CONTENT */}
-                          <div className="flex flex-col justify-center p-6 md:p-8 lg:p-14">
+                          <div className="flex flex-col p-6 md:p-8 lg:p-14">
                             {lecturer.position && (
                               <span
                                 className="
@@ -158,13 +168,13 @@ export const Dosen = () => {
 
                             <div className="w-24 h-[3px] bg-[#C9A227] mt-6 mb-8 rounded-full" />
 
-                            <p className="text-slate-600 leading-relaxed text-lg">
+                            {/* <p className="text-slate-600 leading-relaxed text-lg">
                               Memiliki kompetensi akademik dan pengalaman
                               pelayanan dalam bidang teologi serta pemuridan
                               untuk mendukung pembentukan pelayan Tuhan yang
                               berintegritas dan berdampak bagi gereja maupun
                               masyarakat.
-                            </p>
+                            </p> */}
 
                             {/* KEAHLIAN */}
                             <div className="mt-10">
@@ -176,7 +186,7 @@ export const Dosen = () => {
                                 </span>
                               </div>
 
-                              <div className="grid sm:grid-cols-2 gap-3">
+                              <div className="grid sm:grid-cols-3 gap-3">
                                 {lecturer.expertise.map((skill) => (
                                   <div
                                     key={skill}
@@ -208,8 +218,72 @@ export const Dosen = () => {
                 </motion.div>
               </CarouselItem>
             ))}
-          </CarouselContent>
+          </CardContent>
         </Carousel>
+        <CardContent className="py-16">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {dosen.map((dosen) => (
+              <div
+                key={dosen.name}
+                className="group overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:-translate-y-2 hover:shadow-xl"
+              >
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={dosen.image}
+                    alt={dosen.name}
+                    className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-[#0B1F3A]">
+                    {dosen.name}
+                  </h3>
+
+                  {dosen.position && (
+                    <p className="mt-2 text-sm text-[#C9A227]">
+                      {dosen.position}
+                    </p>
+                  )}
+
+                  <div className="mt-10">
+                    <div className="flex items-center gap-2 mb-5">
+                      <Award className="w-5 h-5 text-[#C9A227]" />
+
+                      <span className="font-semibold text-[#0B1F3A]">
+                        Bidang Keahlian
+                      </span>
+                    </div>
+
+                    <div className="grid sm:grid-cols-1 gap-3">
+                      {dosen.expertise.map((skill) => (
+                        <div
+                          key={skill}
+                          className="
+                                        flex
+                                        items-center
+                                        gap-3
+                                        rounded-xl
+                                        border
+                                        border-slate-200
+                                        p-4
+                                        bg-slate-50
+                                        "
+                        >
+                          <div className="w-2 h-2 rounded-full bg-[#C9A227]" />
+
+                          <span className="text-[#0B1F3A] font-medium">
+                            {skill}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
       </div>
     </section>
   );

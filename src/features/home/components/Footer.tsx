@@ -127,10 +127,10 @@ export const Footer = () => {
                 <Mail size={18} className="text-blue-300 shrink-0" />
 
                 <a
-                  href="mailto:sttverbumregnumdei@gmail.com"
+                  href="mailto:sttverbumregnumdei25@gmail.com"
                   className="text-slate-400 hover:text-blue-300 transition-colors break-all"
                 >
-                  sttverbumregnumdei@gmail.com
+                  sttverbumregnumdei25@gmail.com
                 </a>
               </div>
             </div>

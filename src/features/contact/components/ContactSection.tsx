@@ -82,9 +82,12 @@ export const ContactSection = () => {
                   <h4 className="font-semibold text-[#0b1f3a] text-sm">
                     Email
                   </h4>
-                  <p className="text-slate-600 text-sm mt-1 break-all">
-                    sttverbumregnumdei@gmail.com
-                  </p>
+                  <a
+                    href="mailto:sttverbumregnumdei25@gmail.com"
+                    className="text-slate-600 text-sm mt-1 break-all"
+                  >
+                    sttverbumregnumdei25@gmail.com{" "}
+                  </a>
                 </div>
               </div>
 
