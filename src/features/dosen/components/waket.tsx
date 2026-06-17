@@ -110,7 +110,7 @@ const waket = [
 export const Waket = () => {
   const plugin = useRef(
     Autoplay({
-      delay: 10000,
+      delay: 5000,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
     })
