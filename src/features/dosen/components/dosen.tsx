@@ -53,31 +53,6 @@ const waket = [
   },
 ];
 
-const dosen = [
-  {
-    name: "Billy Steven Kaitjily, M.Th.",
-    position: "Dosen",
-    image: "/dosen/billy.png",
-    expertise: ["Studi Biblika", "Perjanjian Baru", "Pemuridan"],
-  },
-  {
-    name: "Noferius Waruwu, M.Pd.",
-    position: "Dosen",
-    image: "/dosen/noferius.png",
-    expertise: [
-      "Pendidikan Kristen",
-      "Kurikulum dan Pembelajaran",
-      "Pengembangan Karakter",
-    ],
-  },
-  {
-    name: "Ekker Saogo, M.Th.",
-    position: "Dosen",
-    image: "/dosen/ekker.png",
-    expertise: ["Pembinaan Jemaat", "Kepemimpinan Kristen", "Teologi Praktika"],
-  },
-];
-
 export const Dosen = () => {
   const plugin = useRef(
     Autoplay({
