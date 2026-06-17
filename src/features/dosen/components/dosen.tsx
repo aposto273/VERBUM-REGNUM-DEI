@@ -1,309 +1,40 @@
-import { useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import { motion } from "framer-motion";
-import { Award } from "lucide-react";
-
-import { Carousel, CarouselItem } from "@/components/ui/carousel";
-
-import { CardContent } from "@/components/ui/card";
-
-const lecturers = [
-  {
-    name: "Dr. Dony Effendi Kurniawan, S.Th., M.Th.",
-    position: "Ketua Sekolah Tinggi Teologi VERBUM REGNUM DEI",
-    image: "/dosen/dony.png",
-    expertise: [
-      "Kepemimpinan Pendidikan Tinggi Teologi",
-      "Pengembangan Strategis Institusi",
-      "Kepemimpinan Kristen dan Pelayanan Gereja",
-    ],
-  },
-];
-
-const waket = [
-  {
-    name: "Dr. Fery Rondonuwu M.Th",
-    position: "Wakil Ketua 1 bidang Akademis",
-    image: "/waket/fery.png",
-    expertise: [
-      "Pendidikan Teologi",
-      "Kurikulum dan Pembelajaran",
-      "Manajemen Akademik",
-    ],
-  },
-  {
-    name: "Dian Laurenza, S.Pd",
-    position: "Wakil Ketua 2 bidang Keuangan",
-    image: "/waket/dian.png",
-    expertise: [
-      "Pengelolaan Keuangan dan Anggaran",
-      "Administrasi dan Tata Kelola Institusi",
-      "Manajemen Aset dan Sumber Daya",
-    ],
-  },
-  {
-    name: "Dr. Albertus Kurniadi,  M.Sc, M.Th",
-    position: "Wakil Ketua 3 bidang Kemahasiswaan",
-    image: "/waket/albertus.png",
-    expertise: [
-      "Kepemimpinan Pendidikan Tinggi Teologi",
-      "Pengembangan Strategis Institusi",
-      "Kepemimpinan Kristen dan Pelayanan Gereja",
-    ],
-  },
-];
+import { Ketua } from "./ketua";
+import { Waket } from "./waket";
 
 export const Dosen = () => {
-  const plugin = useRef(
-    Autoplay({
-      delay: 5000,
-      stopOnInteraction: false,
-      stopOnMouseEnter: true,
-    })
-  );
-
   return (
     <section
       id="dosen"
-      className="relative overflow-hidden py-28 bg-gradient-to-b from-white via-slate-50 to-white"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white py-28"
     >
       {/* Background Effects */}
-      <div className="absolute top-20 left-0 w-72 h-72 bg-[#C9A227]/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-0 h-72 w-72 rounded-full bg-[#C9A227]/10 blur-3xl" />
 
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#0B1F3A]/10 rounded-full blur-3xl" />
+      <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-[#0B1F3A]/10 blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <span
-            className="
-              inline-flex
-              items-center
-              rounded-full
-              border
-              border-[#C9A227]/20
-              bg-[#C9A227]/10
-              px-4 py-2
-              text-sm
-              font-medium
-              text-[#C9A227]
-            "
-          >
+        <div className="mx-auto mb-20 max-w-3xl text-center">
+          <span className="inline-flex items-center rounded-full border border-[#C9A227]/20 bg-[#C9A227]/10 px-4 py-2 text-sm font-medium text-[#C9A227]">
             Tenaga Pendidik
           </span>
 
-          <h2 className="mt-6 text-4xl md:text-5xl font-bold text-[#0B1F3A]">
+          <h2 className="mt-6 text-4xl font-bold text-[#0B1F3A] md:text-5xl">
             <span className="block text-[#C9A227]">VERBUM REGNUM DEI</span>
           </h2>
 
-          <div className="w-24 h-1 bg-[#C9A227] mx-auto mt-6 rounded-full" />
+          <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-[#C9A227]" />
 
-          <p className="mt-6 text-slate-600 leading-relaxed">
+          <p className="mt-6 leading-relaxed text-slate-600">
             VERBUM REGNUM DEI didukung oleh tenaga pendidik yang memiliki
             kompetensi akademik dan pengalaman pelayanan untuk mendukung
             penyelenggaraan Program Studi Sarjana Teologi.
           </p>
         </div>
 
-        {/* Carousel */}
-        <Carousel
-          plugins={[plugin.current]}
-          opts={{
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CardContent>
-            {lecturers.map((lecturer) => (
-              <CarouselItem key={lecturer.name}>
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeOut",
-                  }}
-                >
-                  <CarouselItem key={lecturer.name}>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <CardContent className="p-0">
-                        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr]">
-                          {/* FOTO */}
-                          <div className="aspect-[599/768] lg:h-[550px] ">
-                            <img
-                              src={lecturer.image}
-                              alt={lecturer.name}
-                              className="
-                                w-full
-                                h-full
-                                lg:w-[350px]
-                                lg:object-cover                              "
-                            />
-                          </div>
+        <Ketua />
 
-                          {/* CONTENT */}
-                          <div className="flex flex-col p-6 md:p-8 lg:p-14">
-                            {lecturer.position && (
-                              <span
-                                className="
-                                inline-flex
-                                w-fit
-                                px-4 py-2
-                                rounded-full
-                                bg-[#C9A227]/10
-                                text-[#C9A227]
-                                border
-                                border-[#C9A227]/20
-                                text-sm
-                                font-medium
-                                "
-                              >
-                                {lecturer.position}
-                              </span>
-                            )}
-
-                            <h3 className="mt-5 text-2xl md:text-3xl lg:text-4xl font-bold text-[#0B1F3A] leading-tight">
-                              {lecturer.name}
-                            </h3>
-
-                            <div className="w-24 h-[3px] bg-[#C9A227] mt-6 mb-8 rounded-full" />
-
-                            {/* <p className="text-slate-600 leading-relaxed text-lg">
-                              Memiliki kompetensi akademik dan pengalaman
-                              pelayanan dalam bidang teologi serta pemuridan
-                              untuk mendukung pembentukan pelayan Tuhan yang
-                              berintegritas dan berdampak bagi gereja maupun
-                              masyarakat.
-                            </p> */}
-
-                            {/* KEAHLIAN */}
-                            <div className="mt-10">
-                              <div className="flex items-center gap-2 mb-5">
-                                <Award className="w-5 h-5 text-[#C9A227]" />
-
-                                <span className="font-semibold text-[#0B1F3A]">
-                                  Bidang Keahlian
-                                </span>
-                              </div>
-
-                              <div className="grid sm:grid-cols-3 gap-3">
-                                {lecturer.expertise.map((skill) => (
-                                  <div
-                                    key={skill}
-                                    className="
-                                        flex
-                                        items-center
-                                        gap-3
-                                        rounded-xl
-                                        border
-                                        border-slate-200
-                                        p-4
-                                        bg-slate-50
-                                        "
-                                  >
-                                    <div className="w-2 h-2 rounded-full bg-[#C9A227]" />
-
-                                    <span className="text-[#0B1F3A] font-medium">
-                                      {skill}
-                                    </span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </motion.div>
-                  </CarouselItem>
-                </motion.div>
-              </CarouselItem>
-            ))}
-          </CardContent>
-        </Carousel>
-        <CardContent className="py-16">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {waket.map((waket) => (
-              <div
-                key={waket.name}
-                className="group overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:-translate-y-2 hover:shadow-xl"
-              >
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
-                    src={waket.image}
-                    alt={waket.name}
-                    className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <div className="p-6">
-                  <div className="text-center">
-                    <h3 className="font-bold text-lg text-[#0B1F3A] mb-2">
-                      {waket.name}
-                    </h3>
-
-                    {waket.position && (
-                      <div className="text-sm text-[#C9A227]">
-                        <span
-                          className="
-                                inline-flex
-                                w-fit
-                                px-4 py-2
-                                rounded-full
-                                bg-[#C9A227]/10
-                                text-[#C9A227]
-                                border
-                                border-[#C9A227]/20
-                                text-sm
-                                font-medium
-                                "
-                        >
-                          {waket.position}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="mt-10">
-                    <div className="flex items-center gap-2 mb-5">
-                      <Award className="w-5 h-5 text-[#C9A227]" />
-
-                      <span className="font-semibold text-[#0B1F3A]">
-                        Bidang Keahlian
-                      </span>
-                    </div>
-
-                    <div className="grid sm:grid-cols-1 gap-3">
-                      {waket.expertise.map((skill) => (
-                        <div
-                          key={skill}
-                          className="
-                                        flex
-                                        items-center
-                                        gap-3
-                                        rounded-xl
-                                        border
-                                        border-slate-200
-                                        p-4
-                                        bg-slate-50
-                                        "
-                        >
-                          <div className="w-2 h-2 rounded-full bg-[#C9A227]" />
-
-                          <span className="text-[#0B1F3A] font-medium">
-                            {skill}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </CardContent>
+        <Waket />
       </div>
     </section>
   );
