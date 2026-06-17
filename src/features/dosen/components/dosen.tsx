@@ -24,6 +24,39 @@ const lecturers = [
   },
 ];
 
+const waket = [
+  {
+    name: "Dr. Fery Rondonuwu M.Th",
+    position: "Wakil Ketua 1 bidang Akademis",
+    image: "/waket/fery.png",
+    expertise: [
+      "Pendidikan Teologi",
+      "Kurikulum dan Pembelajaran",
+      "Manajemen Akademik",
+    ],
+  },
+  {
+    name: "Dian Laurenza, S.Pd",
+    position: "Wakil Ketua 2 bidang Keuangan",
+    image: "/waket/dian.png",
+    expertise: [
+      "Pengelolaan Keuangan dan Anggaran",
+      "Administrasi dan Tata Kelola Institusi",
+      "Manajemen Aset dan Sumber Daya",
+    ],
+  },
+  {
+    name: "Dr. Albertus Kurniadi,  M.Sc, M.Th",
+    position: "Wakil Ketua 3 bidang Kemahasiswaan",
+    image: "/waket/albertus.png",
+    expertise: [
+      "Kepemimpinan Pendidikan Tinggi Teologi",
+      "Pengembangan Strategis Institusi",
+      "Kepemimpinan Kristen dan Pelayanan Gereja",
+    ],
+  },
+];
+
 const dosen = [
   {
     name: "Billy Steven Kaitjily, M.Th.",
@@ -222,30 +255,46 @@ export const Dosen = () => {
         </Carousel>
         <CardContent className="py-16">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {dosen.map((dosen) => (
+            {waket.map((waket) => (
               <div
-                key={dosen.name}
+                key={waket.name}
                 className="group overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:-translate-y-2 hover:shadow-xl"
               >
                 <div className="aspect-[3/4] overflow-hidden">
                   <img
-                    src={dosen.image}
-                    alt={dosen.name}
+                    src={waket.image}
+                    alt={waket.name}
                     className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>
 
                 <div className="p-6">
-                  <h3 className="font-bold text-lg text-[#0B1F3A]">
-                    {dosen.name}
-                  </h3>
+                  <div className="text-center">
+                    <h3 className="font-bold text-lg text-[#0B1F3A] mb-2">
+                      {waket.name}
+                    </h3>
 
-                  {dosen.position && (
-                    <p className="mt-2 text-sm text-[#C9A227]">
-                      {dosen.position}
-                    </p>
-                  )}
-
+                    {waket.position && (
+                      <div className="text-sm text-[#C9A227]">
+                        <span
+                          className="
+                                inline-flex
+                                w-fit
+                                px-4 py-2
+                                rounded-full
+                                bg-[#C9A227]/10
+                                text-[#C9A227]
+                                border
+                                border-[#C9A227]/20
+                                text-sm
+                                font-medium
+                                "
+                        >
+                          {waket.position}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                   <div className="mt-10">
                     <div className="flex items-center gap-2 mb-5">
                       <Award className="w-5 h-5 text-[#C9A227]" />
@@ -256,7 +305,7 @@ export const Dosen = () => {
                     </div>
 
                     <div className="grid sm:grid-cols-1 gap-3">
-                      {dosen.expertise.map((skill) => (
+                      {waket.expertise.map((skill) => (
                         <div
                           key={skill}
                           className="
