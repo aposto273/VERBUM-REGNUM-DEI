@@ -46,11 +46,10 @@ const waket = [
     position: "Kaprodi Teologi",
     image: "/dosen/billy.png",
     expertise: [
-      "Teologi Biblika",
-      "Teologi Sistematika",
-      "Bahasa Ibrani dan Yunani",
-      "Teologi PL",
-      "Misiologi",
+      "Etika Kristen",
+      "Ekoteologi",
+      "Teologi Publik",
+      "Teologi Pastoral",
     ],
   },
   {
