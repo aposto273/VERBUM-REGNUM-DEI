@@ -3,13 +3,9 @@ import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselItem } from "@/components/ui/carousel";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 
 const lecturers = [
   {
