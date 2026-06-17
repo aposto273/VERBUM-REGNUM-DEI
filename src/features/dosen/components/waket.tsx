@@ -113,11 +113,11 @@ export const Waket = () => {
       delay: 5000,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
+      playOnInit: true,
     })
   );
   return (
     <div>
-      {" "}
       <Carousel
         plugins={[plugin.current]}
         opts={{
