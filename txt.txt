@@ -114,3 +114,31 @@ Catatan:
 Informasi mengenai pembukaan pendaftaran mahasiswa baru akan diumumkan setelah proses perizinan penyelenggaraan Program Studi Sarjana Teologi (S.Th.) selesai sesuai dengan ketentuan yang berlaku.
 
 Nti info Tentang Kami ditambahkan foto kampus, foto yayasan, foto calon dosen, serta sambutan Ketua STT.
+
+
+
+
+const dosen = [
+  {
+    name: "Billy Steven Kaitjily, M.Th.",
+    position: "Dosen",
+    image: "/dosen/billy.png",
+    expertise: ["Studi Biblika", "Perjanjian Baru", "Pemuridan"],
+  },
+  {
+    name: "Noferius Waruwu, M.Pd.",
+    position: "Dosen",
+    image: "/dosen/noferius.png",
+    expertise: [
+      "Pendidikan Kristen",
+      "Kurikulum dan Pembelajaran",
+      "Pengembangan Karakter",
+    ],
+  },
+  {
+    name: "Ekker Saogo, M.Th.",
+    position: "Dosen",
+    image: "/dosen/ekker.png",
+    expertise: ["Pembinaan Jemaat", "Kepemimpinan Kristen", "Teologi Praktika"],
+  },
+];
