@@ -68,20 +68,17 @@ const waket = [
     position: "Dosen",
     image: "/waket/guntar.png",
     expertise: [
-      "Teologi Perjanjian Baru",
-      "Eksegesis Perjanjian Baru",
-      "Hermeneutika Alkitab",
+      "Misiologi",
+      "Pertumbuhan Gereja",
+      "Pemuridan",
+      "Kepemimpinan Kristen",
     ],
   },
   {
     name: "Ekker Saogo, M.Th.",
     position: "Dosen",
     image: "/dosen/ekker.png",
-    expertise: [
-      "Teologi Biblika",
-      "Kepemimpinan Kristen",
-      "Apologetika"
-    ],
+    expertise: ["Teologi Biblika", "Kepemimpinan Kristen", "Apologetika"],
   },
   {
     name: "Noferius Waruwu, M.Pd.",
