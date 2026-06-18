@@ -77,7 +77,11 @@ const waket = [
     name: "Ekker Saogo, M.Th.",
     position: "Dosen",
     image: "/dosen/ekker.png",
-    expertise: ["Pembinaan Jemaat", "Kepemimpinan Kristen", "Teologi Praktika"],
+    expertise: [
+      "Teologi Biblika",
+      "Kepemimpinan Kristen",
+      "Apologetika"
+    ],
   },
   {
     name: "Noferius Waruwu, M.Pd.",
@@ -100,9 +104,9 @@ const waket = [
     ],
   },
   {
-    name: "Monang Siahaan M.Th.",
+    name: "Tuju Monang Siahaan M.Th.",
     position: "Dosen Tidak Tetap",
-    image: "",
+    image: "/waket/tuju.png",
     expertise: ["Etika", "Sejarah Gereja", "Homiletik"],
   },
   {
